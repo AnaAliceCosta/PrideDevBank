@@ -1,31 +1,21 @@
 package executavel;
 
-import dominio.Conta;
-import dominio.ContaCorrente;
-import dominio.ContaPoupanca;
+import java.util.Scanner;
+
 
 public class EntradaDados {
 
 	public static void main(String[] args) {
-	
-		Conta contaAna = new Conta();
+	 
 		
-		contaAna.setChavePix("11992188351");
-		contaAna.depositar(100);
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("digite o valor a ser sacado:");
+		int valor = entrada.nextInt();
 		
-		ContaCorrente contaDaGi = new ContaCorrente();
+		CaixaEletronico caixa = new CaixaEletronico();
+		
+		caixa.retirar(valor);
 
-		System.out.println("conta da Gi: " +contaDaGi.getSaldo());
-		
-		
-		System.out.println("saldo " + contaAna.getSaldo());
-		System.out.println("chavePix " + contaAna.getChavePix());
-		System.out.println("saldo anterior "+ contaAna.getSaldo());
-		
-		contaAna.trasferir(10, contaDaGi);
-		System.out.println("novo saldo "+ contaAna.getSaldo());
-		
-		System.out.println("Novo saldo Gi "+ contaDaGi.getSaldo());
 	}
 
 }
