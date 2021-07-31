@@ -8,8 +8,7 @@ public class Conta {
 	protected String numeroAgencia;
 	protected float saldo;
 	protected String tipoConta;
-	protected String cpfCorrentista;
-	protected String nomeCorrentista;
+	protected Cliente cliente;
 	protected String chavePix[] = new String[3]; // email, cpf, telefone
 
 	public float getSaldo() {
@@ -38,8 +37,16 @@ public class Conta {
 		this.saldo += valorDepositado;
 	}
 
-	public void trasferir(float valor, Conta contaDestino) {
+	public void trasferir(float valorTransferencia, Conta contaDestino) {
 
+		this.sacar(valorTransferencia);
+		contaDestino.depositar(valorTransferencia);
+	}
+
+	public void sacar(float valorSaque) {
+		this.saldo -= valorSaque; 
+
+		
 	}
 
 }
