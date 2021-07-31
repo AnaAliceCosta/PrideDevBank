@@ -7,7 +7,6 @@ public class Conta {
 	String numeroConta;
 	protected String numeroAgencia;
 	protected float saldo;
-	protected String tipoConta;
 	protected Cliente cliente;
 	protected String chavePix[] = new String[3]; // email, cpf, telefone
 
