@@ -14,6 +14,8 @@ public class Cliente {
 	}
 
 	public String getNome() {
+		if(true)
+			throw new RuntimeException("erro Generico");
 		return nomeCorrentista;
 	}
 
