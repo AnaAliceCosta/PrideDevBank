@@ -1,14 +1,11 @@
 package executavel;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
+import dao.ClienteDao;
 import dao.ContaDao;
+import dominio.Cliente;
 import dominio.Conta;
-import factory.ConnectionFactory;
 
 public class TestaConexao {
 
@@ -35,9 +32,20 @@ public class TestaConexao {
 			
 			ContaDao contaDao = new ContaDao();
 			
+			ClienteDao clienteDao = new ClienteDao();
+			
+			Cliente cliente = new Cliente("joão","01928374657","Maria");
+			
+			clienteDao.save(cliente);
+			
+			cliente = clienteDao.findByCPF("01928374657");
+			
+			System.out.println(cliente.getId() + " " + cliente.getNome() );
 			
 			
-			Conta conta = new Conta("002","0006");
+			
+			
+			Conta conta = new Conta("002","0006",cliente,1000);
 			contaDao.save(conta);
 		
 		

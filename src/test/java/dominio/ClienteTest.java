@@ -9,7 +9,7 @@ public class ClienteTest {
 	
 	@Test
 	void deveSerPossivelCriarClientePassandoValores() {
-		Cliente cliente = new Cliente("Ana","12345678909");
+		Cliente cliente = new Cliente("Ana","12345678909","alice");
 		
 		
 		String nomeCliente = cliente.getNome();

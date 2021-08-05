@@ -18,12 +18,20 @@ public class ContaDao {
 		Statement comando = conexao.createStatement();
 		
 		comando.execute(
-				"insert into conta (numeroConta,numeroAgencia) values( '" 
-			    + conta.getNumeroConta() + "','" 
-			    + conta.getNumeroAgencia() +"');"
+				"insert into conta (numeroConta,numeroAgencia,saldo,id_cliente) values("
+			    + "'" + conta.getNumeroConta() + "'" 
+			    + ",'" + conta.getNumeroAgencia() +"'"
+			    + ",'" + conta.getSaldo() + "'" 
+			    + ",'" + conta.getCliente().getId()    + "'" 
+			    		+ ");"
 			);
-		
 	}
+	
+//	public void atualizar(Conta conta) {
+//		Statement comando = conexao.createStatement();
+//		
+//	}
+//	
 	
 
 }
